@@ -1,2 +1,2 @@
-exports.user = require('./user');
-exports.product = require('./product');
+exports.User = require('./user');
+exports.Product = require('./product');
