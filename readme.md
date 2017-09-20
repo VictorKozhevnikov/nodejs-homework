@@ -1,2 +1,2 @@
 1. npm install
-2. npm run build-start
+2. npm run start (or start-watch)
