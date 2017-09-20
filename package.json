@@ -4,23 +4,20 @@
   "description": "nodejs tutorial project",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/main.bundle.js",
-    "test": "node ./test.js",
-    "build": "npm run webpack",
-    "build-watch": "npm run webpack -- --watch",
+    "start": "node ./dist",
+    "test": "node ./dist/test.js",
+    "build": "npm run tsc",
+    "rebuild": "npm run clean && npm run tsc",
     "build-start": "npm run build && npm run start",
     "clean": "npm run rimraf -- ./dist",
-    "webpack": "webpack",
-    "rimraf": "rimraf"
+    "rimraf": "rimraf",
+    "tsc": "tsc"
   },
   "author": "Victor Kozhevnikov",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^8.0.28",
-    "awesome-typescript-loader": "^3.2.3",
-    "json-loader": "^0.5.7",
     "rimraf": "^2.6.2",
-    "typescript": "^2.5.2",
-    "webpack": "^3.5.6"
+    "typescript": "^2.5.2"
   }
 }
