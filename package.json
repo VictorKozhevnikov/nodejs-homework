@@ -7,12 +7,14 @@
     "start": "npm run build && node ./dist",
     "start-watch": "npm run nodemon -- --ext ts --exec \"npm run start\"",
     "test": "node ./dist/test.js",
-    "build": "npm run tsc",
+    "build": "npm run lint && npm run tsc",
     "rebuild": "npm run clean && npm run tsc",
+    "lint": "npm run tslint ./src/**/*.ts",
     "clean": "npm run rimraf -- ./dist",
     "rimraf": "rimraf",
     "tsc": "tsc",
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "tslint": "tslint"
   },
   "author": "Victor Kozhevnikov",
   "license": "ISC",
