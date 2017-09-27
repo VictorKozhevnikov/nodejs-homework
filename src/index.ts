@@ -1,9 +1,5 @@
-// have to use require because ts compiler can not import this
-import { config } from './config';
+import { DirWatcher } from './dir-watcher';
 
-import { User, Product } from './models';
+const dirWatcher: DirWatcher = new DirWatcher();
 
-console.log(config.name);
-
-const user = new User();
-const product = new Product();
+dirWatcher.watch('./data');
