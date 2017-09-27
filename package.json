@@ -4,11 +4,12 @@
   "description": "nodejs tutorial project",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node ./dist",
+    "start-run": "node ./dist",
+    "start": "npm run build && npm run start-run",
     "start-watch": "npm run nodemon -- --ext ts --exec \"npm run start\"",
     "test": "node ./dist/test.js",
     "build": "npm run lint && npm run tsc",
-    "rebuild": "npm run clean && npm run tsc",
+    "rebuild": "npm run clean && npm run build",
     "lint": "npm run tslint ./src/**/*.ts",
     "clean": "npm run rimraf -- ./dist",
     "rimraf": "rimraf",
@@ -19,6 +20,7 @@
   "author": "Victor Kozhevnikov",
   "license": "ISC",
   "devDependencies": {
+    "@types/csv-parse": "^1.1.10",
     "@types/node": "^8.0.28",
     "nodemon": "^1.12.1",
     "rimraf": "^2.6.2",
@@ -26,6 +28,8 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
-    "eventemitter3": "^2.0.3"
+    "csv-parse": "^1.2.3",
+    "eventemitter3": "^2.0.3",
+    "rxjs": "^5.4.3"
   }
 }

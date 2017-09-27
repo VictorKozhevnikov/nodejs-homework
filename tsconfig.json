@@ -18,7 +18,7 @@
     ],
     "types": [
       "node",
-      "nodemon"
+      "csv-parse"
     ]
   }
 }

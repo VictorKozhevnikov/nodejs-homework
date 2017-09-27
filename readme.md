@@ -1,2 +1,2 @@
 1. npm install
-2. npm run start (or start-watch)
+2. npm run start -- async (or start-watch)
