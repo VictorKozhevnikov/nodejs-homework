@@ -1,8 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { EventEmitter } from 'events';
+import { IDirWatcher } from './dir-watcher-interface';
 
-export class DirWatcher extends EventEmitter {
+export class DirWatcher extends EventEmitter implements IDirWatcher {
     public static readonly changed: string = 'dirwatcher:changed';
 
     private readonly fsWatcher: fs.FSWatcher;

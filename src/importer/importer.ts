@@ -2,8 +2,9 @@ import { DirWatcher } from '../dir-watcher';
 import { CsvImport } from './csv-import';
 import * as fs from 'fs';
 import { Subject, Observable } from 'rxjs';
+import { IIMporter } from './importer-interface';
 
-export class Importer extends DirWatcher {
+export class Importer extends DirWatcher implements IIMporter {
     private readonly unsubscribe: Subject<void>;
     private readonly fileNamesSubject = new Subject<string>();
 
