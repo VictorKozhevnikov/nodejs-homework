@@ -16,9 +16,7 @@ switch (process.argv.splice(2, 1)[0]) {
 }
 
 if (importStrategy) {
-    const dirWatcher: DirWatcher = new DirWatcher();
-    const dirWatcherInstance = dirWatcher.watch('./data');
-    const importer = new Importer(dirWatcherInstance, SyncCsvImport);
+    const importer = new Importer('./data', importStrategy);
 
     console.log('Watching the ./data folder');
 }
