@@ -36,7 +36,8 @@
             "ban-single-arg-parens"
         ],
         "no-empty": false,
+        "no-empty-interface": false,
         "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
-        "interface-name": [true, "never-prefix"]
+        "interface-name": [true, "always-prefix"]
     }
 }

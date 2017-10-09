@@ -1,2 +1,2 @@
 export * from './dir-watcher';
-export * from './dir-watcher-instance';
+export * from './dir-watcher-interface';
