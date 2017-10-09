@@ -17,7 +17,9 @@
     ],
     "types": [
       "node",
-      "csv-parse"
+      "csv-parse",
+      "through2",
+      "minimist"
     ]
   }
 }

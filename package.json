@@ -28,8 +28,10 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
+    "@types/minimist": "^1.2.0",
+    "@types/through2": "^2.0.33",
     "csv-parse": "^1.2.3",
-    "eventemitter3": "^2.0.3",
-    "rxjs": "^5.4.3"
+    "minimist": "^1.2.0",
+    "through2": "^2.0.3"
   }
 }
