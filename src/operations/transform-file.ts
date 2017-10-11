@@ -7,6 +7,7 @@ function uppercase(this: stream.Transform, chunk: any, encoding: string, callbac
     const chunkBuffer: Buffer = chunk as Buffer;
     const chunkString: string = chunkBuffer.toString('utf8');
     this.push(chunkString.toUpperCase());
+    callback();
 }
 
 export function transformFile(filePath: string): void {

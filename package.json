@@ -2,7 +2,7 @@
   "name": "kozhevnikov-nodejs",
   "version": "0.0.0",
   "description": "nodejs tutorial project",
-  "main": "index.js",
+  "main": "dist/operations/index.ts",
   "scripts": {
     "start-run": "node ./dist",
     "start": "npm run build && npm run start-run",
@@ -29,9 +29,10 @@
   },
   "dependencies": {
     "@types/minimist": "^1.2.0",
-    "@types/through2": "^2.0.33",
     "csv-parse": "^1.2.3",
+    "csv-streamify": "^3.0.4",
     "minimist": "^1.2.0",
+    "rxjs": "^5.4.3",
     "through2": "^2.0.3"
   }
 }
