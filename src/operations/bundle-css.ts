@@ -15,6 +15,7 @@ export function bundleCss(cssPath: string): void {
         .flatMap(s => Observable.fromEvent(s, 'end', { once: true }));
 
     const writeStream = fs.createWriteStream(bundlePath);
+
     readDir(cssPath)
         .flatMap(files => Observable.of(...files))
         .filter(fileName => fileName !== bundleFileName)
@@ -26,5 +27,10 @@ export function bundleCss(cssPath: string): void {
         .subscribe(
         s => s.pipe(writeStream, { end: false }),
         e => console.log(e),
-        () => writeStream.end());
+        () => setTimeout(() => writeStream.end()));
+
+    // readStreams
+    //     .last()
+    //     .flatMap(s => Observable.fromEvent(s, 'end', { once: true }))
+    //     .subscribe(() => writeStream.end());
 }
