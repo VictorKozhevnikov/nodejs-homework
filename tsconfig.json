@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     // should enable later
@@ -13,11 +13,14 @@
     "strictNullChecks": true,
     "target": "es2015",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "types"
     ],
     "types": [
       "node",
-      "csv-parse"
+      "csv-parse",
+      "through2",
+      "minimist"
     ]
   }
 }

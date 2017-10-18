@@ -1,2 +1,3 @@
 1. npm install
-2. npm run start -- async (or start-watch)
+2. npm run build
+3. node ./dist --help
