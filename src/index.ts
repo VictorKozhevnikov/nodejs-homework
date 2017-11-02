@@ -1,6 +1,6 @@
 import * as http from 'http';
 
-import { Handler, plainTextHandler, htmlHandler } from './http-handlers';
+import { Handler, plainTextHandler, htmlHandler, jsonHandler } from './http-handlers';
 
 const port = 3000;
 
@@ -13,6 +13,9 @@ switch (handlerName) {
     break;
   case 'html':
     handler = htmlHandler;
+    break;
+  case 'json':
+    handler = jsonHandler;
     break;
   default:
     handler = null;
