@@ -33,8 +33,12 @@ switch (handlerName) {
 if (handler) {
   http.createServer(handler).listen(port);
   console.log(`Listening on port ${port}`);
-} else if (app) {
-  app.listen(port, () => console.log(`Listening on port ${port}`));
+} else if (application) {
+  application.listen(port, () => console.log(`Listening on port ${port}`));
 } else {
-  console.log('No handler selected');
+  console.log(`Usage
+node ./dist <command>
+
+command: plain-text, html, json, echo, app
+`);
 }
