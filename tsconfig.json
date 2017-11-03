@@ -18,7 +18,8 @@
     ],
     "types": [
       "node",
-      "stream-replace"
+      "stream-replace",
+      "cookie-parser"
     ]
   }
 }
