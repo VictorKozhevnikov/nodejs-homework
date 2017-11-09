@@ -26,7 +26,14 @@ switch (handlerName) {
   case 'app':
     application = app;
     break;
+  case 'help':
+    // don't set anything on help
+    break;
   default:
+    console.log(`No options provided. Starting express application by default.
+Run node ./dist help to see available options
+`);
+    application = app;
     handler = null;
 }
 
