@@ -1,8 +1,8 @@
 import * as express from 'express';
-// import * as cookieParser from 'cookie-parser';
+import { cookieLog, cookieParse, cookieSet } from './core';
 
 import { appRouter } from './app.router';
 
 export const app = express()
-  // .use(cookieParser())
+  .use(cookieParse, cookieLog, cookieSet)
   .use('/', appRouter);
