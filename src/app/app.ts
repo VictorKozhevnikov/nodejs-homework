@@ -1,8 +1,8 @@
 import * as express from 'express';
-import { cookieLog, cookieParse, cookieSet } from './core';
+import { urlLog, cookieLog, cookieParse, cookieSet, queryParse, queryLog } from './core';
 
 import { appRouter } from './app.router';
 
 export const app = express()
-  .use(cookieParse, cookieLog, cookieSet)
+  .use(urlLog, cookieParse, cookieLog, queryParse, queryLog, cookieSet)
   .use('/', appRouter);
