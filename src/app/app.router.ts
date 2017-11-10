@@ -1,5 +1,11 @@
 import { Router } from 'express';
 
-export const appRouter = Router().get('/', (request, response) => {
-  response.end('Hello, World!');
-});
+import { productsRouter } from './products';
+import { usersRouter } from './users';
+
+export const appRouter = Router()
+  .use('/api/products', productsRouter)
+  .use('/api/users', usersRouter)
+  .get('/', (request, response) => {
+    response.end('Hello, World!');
+  });

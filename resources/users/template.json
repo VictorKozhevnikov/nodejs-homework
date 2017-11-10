@@ -1,0 +1,9 @@
+{
+  "users": [
+    "{{repeat(10, 20)}}",
+    {
+      "id": "{{index()}}",
+      "name": "{{firstName()}} {{surname()}}"
+    }
+  ]
+}
