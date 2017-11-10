@@ -1,67 +1,51 @@
-import * as minimist from 'minimist';
-import {
-    inputOutput,
-    transformFile,
-    readCsv,
-    transformCsv,
-    bundleCss
-} from './operations';
+import * as http from 'http';
+import * as express from 'express';
 
-const minimistOptions: minimist.Opts = {
-    alias: {
-        action: 'a',
-        file: 'f',
-        help: 'h',
-        path: 'p'
-    }
-};
+import { Handler, plainTextHandler, htmlHandler, jsonHandler, echoHandler } from './http-handlers';
+import { app } from './app';
 
-const slicedArgs = process.argv.slice(2);
-const argv = minimist(slicedArgs, minimistOptions);
+const port = 3000;
 
-const action = argv.action;
-const file = argv.file;
-const path = argv.path;
+let handler: Handler | null = null;
+let application: express.Application | null = null;
 
-if (slicedArgs.length === 0 || argv.help) {
-    printUsageInfo();
-} else {
-    switch (action) {
-        case 'input-output':
-            inputOutput(file);
-            break;
-        case 'transform-file':
-            transformFile(file);
-            break;
-        case 'read-csv':
-            readCsv(file);
-            break;
-        case 'transform-csv':
-            transformCsv(file);
-            break;
-        case 'bundle-css':
-            bundleCss(path);
-            break;
-        default:
-            break;
-    }
+const handlerName = process.argv.splice(2, 1)[0];
+switch (handlerName) {
+  case 'plain-text':
+    handler = plainTextHandler;
+    break;
+  case 'html':
+    handler = htmlHandler;
+    break;
+  case 'json':
+    handler = jsonHandler;
+    break;
+  case 'echo':
+    handler = echoHandler;
+    break;
+  case 'app':
+    application = app;
+    break;
+  case 'help':
+    // don't set anything on help
+    break;
+  default:
+    console.log(`No options provided. Starting express application by default.
+Run node ./dist help to see available options
+`);
+    application = app;
+    handler = null;
 }
 
-function printUsageInfo() {
-    console.log(`
-node ./dist options
+if (handler) {
+  http.createServer(handler).listen(port);
+  console.log(`Listening on port ${port}`);
+} else if (application) {
+  application.listen(port, () => console.log(`Listening on port ${port}`));
+} else {
+  console.log(`Usage
+node ./dist <command>
 
-options
-    -h, --help
-    -a="action name", --action="action name"
-    -f="file path", --file="file path"
-    -p="path", --path="path"
-
-actions
-    input-output: pipe the given file to process.stdout
-    transform-file: upper-case data on process.stdout
-    read-csv: convert file from csvto jsonand output data to process.stdout
-    transform-csv: convert file from csvto jsonand output data to a result file with the same name but .json extension
-    bundle-css: bundle css files from <path> to <path>/bundle.css
-    `);
+command: plain-text, html, json, echo, app
+`);
 }

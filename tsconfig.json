@@ -18,9 +18,8 @@
     ],
     "types": [
       "node",
-      "csv-parse",
-      "through2",
-      "minimist"
+      "stream-replace",
+      "cookie-parser"
     ]
   }
 }
