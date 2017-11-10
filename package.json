@@ -26,6 +26,9 @@
     "@types/jsonwebtoken": "^7.2.3",
     "@types/lowdb": "^0.15.0",
     "@types/node": "^8.0.28",
+    "@types/passport": "^0.4.1",
+    "@types/passport-http-bearer": "^1.0.31",
+    "@types/passport-local": "^1.0.32",
     "@types/url-parse": "^1.1.0",
     "nodemon": "^1.12.1",
     "rimraf": "^2.6.2",
@@ -33,11 +36,15 @@
     "typescript": "^2.5.2"
   },
   "dependencies": {
+    "compose-middleware": "^3.0.0",
     "cookie": "^0.3.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
     "lowdb": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
     "rxjs": "^5.4.3",
     "stream-replace": "^1.0.0",
     "url-parse": "^1.2.0"
