@@ -7,22 +7,7 @@ import { createProductsRouter } from './products';
 import { createUsersRouter } from './users';
 
 export async function createAppRouter(): Promise<Router> {
-  const entityPaths = [
-    __dirname + '/products/typeorm/product.entity.js',
-    __dirname + '/products/typeorm/review.entity.js',
-    __dirname + '/users/typeorm/user.entity.js'
-  ];
-
-  const connection = await createConnection({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    password: '123',
-    database: 'nodejshomework',
-    entities: entityPaths,
-    synchronize: true
-  });
+  const connection = await createConnection();
   const productsRouter = await createProductsRouter(connection);
   const usersRouter = await createUsersRouter(connection);
 
