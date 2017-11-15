@@ -4,8 +4,9 @@
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    // should enable later
-    // "noUnusedLocals": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "outDir": "./dist",
     // "sourceMap": true,
     // "inlineSourceMap": true,

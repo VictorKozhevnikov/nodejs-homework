@@ -42,14 +42,16 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
-    "lowdb": "^1.0.0",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
+    "pg": "^7.4.0",
+    "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.3",
     "stream-replace": "^1.0.0",
+    "typeorm": "^0.1.2",
     "url-parse": "^1.2.0"
   }
 }

@@ -1,8 +1,14 @@
 import * as express from 'express';
-import { urlLog, cookieLog, cookieParse, cookieSet, queryParse, queryLog } from './core';
+import { urlLog } from './core';
 
-import { appRouter } from './app.router';
+import { createAppRouter } from './app.router';
 
-export const app = express()
-  .use(urlLog)
-  .use('/', appRouter);
+export async function createApp(): Promise<express.Express> {
+  const appRouter = await createAppRouter();
+
+  const app = express()
+    .use(urlLog)
+    .use('/', appRouter);
+
+  return app;
+}
