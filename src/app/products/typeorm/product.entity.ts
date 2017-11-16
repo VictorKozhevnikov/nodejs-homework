@@ -6,7 +6,7 @@ import { Product } from '..';
 export class ProductEntity implements Product {
   @PrimaryColumn() public id: number;
 
-  @Column() public name: string;
+  @Column() public title: string;
 
   @Column() public releaseYear: number;
 }
