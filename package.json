@@ -12,10 +12,13 @@
     "rebuild": "npm run clean && npm run build",
     "lint": "npm run tslint ./src/**/*.ts",
     "clean": "npm run rimraf -- ./dist",
+    "migrations:run": "typeorm migrations:run",
+    "migrations:generate": "typeorm migrations:generate",
     "rimraf": "rimraf",
     "tsc": "tsc",
     "nodemon": "nodemon",
-    "tslint": "tslint"
+    "tslint": "tslint",
+    "typeorm": "typeorm"
   },
   "author": "Victor Kozhevnikov",
   "license": "ISC",

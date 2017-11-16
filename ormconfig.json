@@ -5,17 +5,17 @@
     "username": "postgres",
     "password": "123",
     "database": "nodejshomework",
-    "synchronize": true,
+    "synchronize": false,
     "logging": false,
     "entities": [
        "dist/**/*.entity.js"
     ],
     "migrations": [
-        "src/migration/**/*.ts"
+        "dist/migration/**/*.js"
     ],
     "cli": {
        "entitiesDir": "src/entity",
-       "migrationsDir": "src/migration",
+       "migrationsDir": "migration",
        "subscribersDir": "src/subscriber"
     }
  }
