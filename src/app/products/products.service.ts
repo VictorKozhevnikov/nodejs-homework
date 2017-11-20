@@ -36,7 +36,7 @@ export class ProductsService {
   private makeProduct(productData: ProductData): Product {
     return {
       id: this.nextId++,
-      name: productData.name,
+      title: productData.name,
       releaseYear: productData.releaseYear
     };
   }
