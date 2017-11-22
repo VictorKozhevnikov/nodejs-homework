@@ -12,7 +12,6 @@ export class CitiesMongoRepository implements CitiesRepository {
     }
 
     public async getRandomCity(): Promise<City> {
-        // Get the count of all users
         const citiesCount = await this.cityModel.count({}).exec();
         const randomIndex = Math.floor(Math.random() * citiesCount);
         const randomCity = await this.cityModel.findOne({}).skip(randomIndex).exec();

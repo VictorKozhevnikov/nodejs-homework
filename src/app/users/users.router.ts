@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { Connection } from 'typeorm';
+import { Connection } from 'mongoose';
 
 import { UserService } from './users.service';
-import { UserEntity, UsersTypeormRepository } from './typeorm';
+import { UsersMongoRepository } from './mongodb';
 
 export async function createUsersRouter(connection: Connection): Promise<Router> {
-  const usersRepository = new UsersTypeormRepository(connection.getRepository(UserEntity));
+  const usersRepository = new UsersMongoRepository(connection);
   const usersService = new UserService(usersRepository);
 
   await usersService.initializeUsers();

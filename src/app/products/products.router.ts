@@ -1,38 +1,14 @@
 import { Router, json } from 'express';
-import { Connection } from 'typeorm';
+import { Connection } from 'mongoose';
 
-import {
-  ProductsService,
-  ReviewsService
-} from '.';
-import {
-  ProductEntity,
-  ProductsTypeormRepository,
-  ReviewEntity,
-  ReviewsTypeormRepository
-} from './typeorm';
-
-// createConnection({
-//   type: 'postgres',
-//   host: 'localhost',
-//   port: 5432,
-//   username: 'root',
-//   password: '123',
-//   database: 'nodejshomework',
-//   entities: [__dirname + '/entity/*.js'],
-//   synchronize: true
-// })
-//   .then(connection => {
-//     // here you can start to work with your entities
-//   })
-//   .catch(error => console.log(error));
+import { ProductsService, ReviewsService } from '.';
+import { ProductsMongoRepository, ReviewsMongoRepository } from './mongodb';
 
 export async function createProductsRouter(connection: Connection): Promise<Router> {
   // resolve services
-
-  const productsRepository = new ProductsTypeormRepository(connection.getRepository(ProductEntity));
+  const productsRepository = new ProductsMongoRepository(connection);
   const productsService = new ProductsService(productsRepository);
-  const reviewsRepository = new ReviewsTypeormRepository(connection.getRepository(ReviewEntity));
+  const reviewsRepository = new ReviewsMongoRepository(connection);
   const reviewsService = new ReviewsService(reviewsRepository);
 
   await productsService.initializeProducts();

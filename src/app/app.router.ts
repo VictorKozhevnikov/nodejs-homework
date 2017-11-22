@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { createConnection } from 'typeorm';
 import * as mongoose from 'mongoose';
 
 import { createProductsRouter } from './products';
@@ -10,11 +9,10 @@ const mongoUrl = 'mongodb://localhost:27017/nodejsHomework';
 
 export async function createAppRouter(): Promise<Router> {
   // initialize db connections
-  const postgresConnection = await createConnection();
   const mongoConnection = mongoose.createConnection(mongoUrl);
 
-  const productsRouter = await createProductsRouter(postgresConnection);
-  const usersRouter = await createUsersRouter(postgresConnection);
+  const productsRouter = await createProductsRouter(mongoConnection);
+  const usersRouter = await createUsersRouter(mongoConnection);
   const citiesRouter = await createCitiesRouter(mongoConnection);
 
   const appRouter = Router()
