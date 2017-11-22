@@ -18,8 +18,7 @@
       "types"
     ],
     "types": [
-      "node",
-      "cookie-parser"
+      "node"
     ]
   }
 }

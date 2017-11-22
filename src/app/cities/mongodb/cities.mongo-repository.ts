@@ -1,21 +1,26 @@
-import { Db, Collection } from 'mongodb';
+import { Connection, Model, Document } from 'mongoose';
 
 import { City, CitiesRepository } from '..';
 
+import { CityTypegoose } from './city.typegoose';
+
 export class CitiesMongoRepository implements CitiesRepository {
-  private collection: Collection<City>;
+    private readonly cityModel: Model<CityTypegoose & Document>;
 
-  public constructor(db: Db) {
-    this.collection = db.collection<City>('cities');
-  }
+    public constructor(connection: Connection) {
+        this.cityModel = new CityTypegoose().getModelForClass(CityTypegoose, { existingConnection: connection });
+    }
 
-  public async getRandomCity(): Promise<City> {
-    const sample = await this.collection.aggregate([{ $sample: { size: 1 } }]).toArray();
-    return sample[0];
-  }
+    public async getRandomCity(): Promise<City> {
+        // Get the count of all users
+        const citiesCount = await this.cityModel.count({}).exec();
+        const randomIndex = Math.floor(Math.random() * citiesCount);
+        const randomCity = await this.cityModel.findOne({}).skip(randomIndex).exec();
+        return randomCity;
+    }
 
-  public async initializeCities(cities: Array<City>): Promise<void> {
-    await this.collection.remove({});
-    await this.collection.insertMany(cities);
-  }
+    public async initializeCities(cities: Array<City>): Promise<void> {
+        await this.cityModel.remove({}).exec();
+        await this.cityModel.insertMany(cities);
+    }
 }

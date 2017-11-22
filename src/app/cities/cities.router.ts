@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { Db } from 'mongodb';
+import { Connection } from 'mongoose';
 
 import { CitiesService, CitiesRepository } from '.';
 import { CitiesMongoRepository } from './mongodb';
 
-export async function createCitiesRouter(db: Db): Promise<Router> {
+export async function createCitiesRouter(connection: Connection): Promise<Router> {
   // resolve services
-  const citiesRepository: CitiesRepository = new CitiesMongoRepository(db);
+  const citiesRepository: CitiesRepository = new CitiesMongoRepository(connection);
   const citiesService = new CitiesService(citiesRepository);
 
   await citiesService.initializeCities();
