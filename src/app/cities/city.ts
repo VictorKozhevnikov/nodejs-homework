@@ -1,4 +1,6 @@
-export interface City {
+import { Timestamped } from '../core/mongodb';
+
+export interface City extends Timestamped {
   id: number;
   name: string;
   latitude: number;

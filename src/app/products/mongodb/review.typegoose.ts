@@ -1,7 +1,10 @@
-import { Typegoose, prop } from 'typegoose';
+import { Typegoose, prop, pre } from 'typegoose';
+
+import { Timestamped, setTimestamp } from '../../core/mongodb';
 
 import { Review } from '..';
 
+@pre<Timestamped>('save', setTimestamp)
 export class ReviewTypegoose extends Typegoose implements Review {
   @prop({ min: 0 })
   public id: number;
@@ -20,4 +23,7 @@ export class ReviewTypegoose extends Typegoose implements Review {
 
   @prop({ maxlength: 2500 })
   public summary: string;
+
+  @prop()
+  public lastModifiedDate: Date;
 }

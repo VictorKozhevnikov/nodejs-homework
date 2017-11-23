@@ -1,7 +1,10 @@
-import { Typegoose, prop } from 'typegoose';
+import { Typegoose, prop, pre } from 'typegoose';
+
+import { Timestamped, setTimestamp } from '../../core/mongodb';
 
 import { City } from '../city';
 
+@pre<Timestamped>('save', setTimestamp)
 export class CityTypegoose extends Typegoose implements City {
   @prop({ min: 0 })
   public id: number;
@@ -19,10 +22,11 @@ export class CityTypegoose extends Typegoose implements City {
   public population: number;
 
   @prop({ maxlength: 250 })
-  @prop()
   public country: string;
 
   @prop({ maxlength: 250 })
-  @prop()
   public province: string;
+
+  @prop()
+  public lastModifiedDate: Date;
 }
