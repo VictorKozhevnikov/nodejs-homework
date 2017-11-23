@@ -5,21 +5,30 @@ import { City, CitiesRepository } from '..';
 import { CityTypegoose } from './city.typegoose';
 
 export class CitiesMongoRepository implements CitiesRepository {
-    private readonly cityModel: Model<CityTypegoose & Document>;
+  private readonly CityModel: Model<CityTypegoose & Document>;
 
-    public constructor(connection: Connection) {
-        this.cityModel = new CityTypegoose().getModelForClass(CityTypegoose, { existingConnection: connection });
-    }
+  public constructor(connection: Connection) {
+    this.CityModel = new CityTypegoose().getModelForClass(CityTypegoose, {
+      existingConnection: connection
+    });
+  }
 
-    public async getRandomCity(): Promise<City> {
-        const citiesCount = await this.cityModel.count({}).exec();
-        const randomIndex = Math.floor(Math.random() * citiesCount);
-        const randomCity = await this.cityModel.findOne({}).skip(randomIndex).exec();
-        return randomCity;
-    }
+  public getAllCities(): Promise<Array<City>> {
+    return this.CityModel.find({}).exec();
+  }
 
-    public async initializeCities(cities: Array<City>): Promise<void> {
-        await this.cityModel.remove({}).exec();
-        await this.cityModel.insertMany(cities);
-    }
+  public async getRandomCity(): Promise<City> {
+    const citiesCount = await this.CityModel.count({}).exec();
+    const randomIndex = Math.floor(Math.random() * citiesCount);
+    const randomCity = await this.CityModel
+      .findOne({})
+      .skip(randomIndex)
+      .exec();
+    return randomCity;
+  }
+
+  public async initializeCities(cities: Array<City>): Promise<void> {
+    await this.CityModel.remove({}).exec();
+    await this.CityModel.insertMany(cities);
+  }
 }

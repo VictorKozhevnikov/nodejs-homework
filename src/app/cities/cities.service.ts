@@ -17,6 +17,10 @@ export class CitiesService {
 
   public constructor(private readonly citiesRepository: CitiesRepository) {}
 
+  public getAllCities(): Promise<Array<City>> {
+    return this.citiesRepository.getAllCities();
+  }
+
   public getRandomCity(): Promise<City> {
     return this.citiesRepository.getRandomCity();
   }

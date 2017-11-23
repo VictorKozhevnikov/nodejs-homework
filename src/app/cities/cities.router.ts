@@ -11,10 +11,8 @@ export async function createCitiesRouter(connection: Connection): Promise<Router
 
   await citiesService.initializeCities();
 
-  const citiesRouter = Router().get('/', async (request, response) => {
-    const city = await citiesService.getRandomCity();
-    response.json(city);
-    response.end();
+  const citiesRouter = Router().get('/', (request, response) => {
+    citiesService.getAllCities().then(cities => response.json(cities).end());
   });
 
   return citiesRouter;
