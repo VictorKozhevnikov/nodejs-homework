@@ -32,6 +32,14 @@ export async function createCitiesRouter(connection: Connection): Promise<Router
     })
     .get('/:cityId', (request, response) => {
       citiesService.getCity(response.locals.cityIdInt).then(city => response.json(city).end());
+    })
+    .put('/:cityId', (request, response) => {
+      citiesService
+        .addOrUpdateCity(response.locals.cityIdInt, request.body)
+        .then(city => response.json(city).end());
+    })
+    .delete('/:cityId', (request, response) => {
+      citiesService.deleteCity(response.locals.cityIdInt).then(city => response.status(200).end());
     });
 
   return citiesRouter;

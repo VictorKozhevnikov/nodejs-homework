@@ -23,8 +23,31 @@ export class CitiesService {
 
   public async addCity(cityData: CityData): Promise<City> {
     const city: City = this.makeCity(cityData);
-    await this.citiesRepository.addCity(city);
+    await this.citiesRepository.addOrUpdateCity(city);
     return city;
+  }
+
+  public async addOrUpdateCity(cityId: number, cityData: CityData): Promise<City> {
+    let city: City = await this.citiesRepository.getCity(cityId);
+    if (city != null) {
+      // update the city
+      city.name = cityData.name;
+      city.country = cityData.country;
+      city.latitude = cityData.latitude;
+      city.longitude = cityData.longitude;
+      city.population = cityData.population;
+      city.province = cityData.province;
+      this.citiesRepository.addOrUpdateCity(city);
+    }
+    if (city === null) {
+      city = this.makeCity(cityData, cityId);
+      await this.citiesRepository.addOrUpdateCity(city);
+    }
+    return city;
+  }
+
+  public deleteCity(cityId: number): Promise<void> {
+    return this.citiesRepository.deleteCity(cityId);
   }
 
   public initializeCities(): Promise<void> {
@@ -33,9 +56,9 @@ export class CitiesService {
     );
   }
 
-  private makeCity(data: CityData): City {
+  private makeCity(data: CityData, cityId?: number): City {
     return {
-      id: this.nextId++,
+      id: cityId || this.nextId++,
       name: data.name,
       country: data.country,
       latitude: data.latitude,

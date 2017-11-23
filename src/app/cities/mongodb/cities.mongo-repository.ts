@@ -30,9 +30,13 @@ export class CitiesMongoRepository implements CitiesRepository {
     return randomCity;
   }
 
-  public async addCity(city: City): Promise<void> {
+  public async addOrUpdateCity(city: City): Promise<void> {
     const cityModel = new this.CityModel(city);
     await cityModel.save();
+  }
+
+  public deleteCity(cityId: number): Promise<void> {
+    return this.CityModel.remove({ id: cityId }).exec();
   }
 
   public async initializeCities(cities: Array<City>): Promise<void> {

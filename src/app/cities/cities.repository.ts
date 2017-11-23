@@ -7,7 +7,9 @@ export interface CitiesRepository {
 
   getRandomCity(): Promise<City>;
 
-  addCity(city: City): Promise<void>;
+  addOrUpdateCity(city: City): Promise<void>;
+
+  deleteCity(cityId: number): Promise<void>;
 
   initializeCities(cities: Array<City>): Promise<void>;
 }
