@@ -7,5 +7,7 @@ export interface ProductsRepository {
 
   addProduct(product: Product): Promise<void>;
 
+  deleteProduct(productId: number): Promise<void>;
+
   initializeProducts(products: Array<Product>): Promise<void>;
 }

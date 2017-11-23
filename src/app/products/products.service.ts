@@ -29,6 +29,10 @@ export class ProductsService {
     return product;
   }
 
+  public deleteProduct(productId: number): Promise<void> {
+    return this.repository.deleteProduct(productId);
+  }
+
   public initializeProducts(): Promise<void> {
     return this.repository.initializeProducts(products);
   }

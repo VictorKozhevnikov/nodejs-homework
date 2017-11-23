@@ -63,6 +63,11 @@ export async function createProductsRouter(connection: Connection): Promise<Rout
         response.end('product not found');
       }
     })
+    .delete('/:productId', async (request, response) => {
+      return productsService
+        .deleteProduct(response.locals.productIdInt)
+        .then(() => response.status(200).end());
+    })
     .get('/:productId/reviews', async (request, response) => {
       const reviews = await reviewsService.getProductReviews(response.locals.productIdInt);
       response.json(reviews);

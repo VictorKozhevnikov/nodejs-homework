@@ -27,6 +27,10 @@ export class ProductsMongoRepository implements ProductsRepository {
     await productInstance.save();
   }
 
+  public deleteProduct(productId: number): Promise<void> {
+    return this.ProductModel.remove({ id: productId }).exec();
+  }
+
   public async initializeProducts(products: Array<Product>): Promise<void> {
     await this.ProductModel.remove({});
     await this.ProductModel.insertMany(products);
