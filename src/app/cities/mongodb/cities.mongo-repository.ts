@@ -17,14 +17,22 @@ export class CitiesMongoRepository implements CitiesRepository {
     return this.CityModel.find({}).exec();
   }
 
+  public getCity(cityId: number): Promise<City> {
+    return this.CityModel.findOne({ id: cityId }).exec();
+  }
+
   public async getRandomCity(): Promise<City> {
     const citiesCount = await this.CityModel.count({}).exec();
     const randomIndex = Math.floor(Math.random() * citiesCount);
-    const randomCity = await this.CityModel
-      .findOne({})
+    const randomCity = await this.CityModel.findOne({})
       .skip(randomIndex)
       .exec();
     return randomCity;
+  }
+
+  public async addCity(city: City): Promise<void> {
+    const cityModel = new this.CityModel(city);
+    await cityModel.save();
   }
 
   public async initializeCities(cities: Array<City>): Promise<void> {

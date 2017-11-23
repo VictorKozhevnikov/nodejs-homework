@@ -1,5 +1,4 @@
-export interface City {
-  id: number;
+export interface CityData {
   name: string;
   latitude: number;
   longitude: number;

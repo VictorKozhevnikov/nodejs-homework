@@ -3,6 +3,9 @@ import { Typegoose, prop } from 'typegoose';
 import { City } from '../city';
 
 export class CityTypegoose extends Typegoose implements City {
+  @prop({ min: 0 })
+  public id: number;
+
   @prop({ maxlength: 250 })
   public name: string;
 
@@ -16,8 +19,10 @@ export class CityTypegoose extends Typegoose implements City {
   public population: number;
 
   @prop({ maxlength: 250 })
-  @prop() public country: string;
+  @prop()
+  public country: string;
 
   @prop({ maxlength: 250 })
-  @prop() public province: string;
+  @prop()
+  public province: string;
 }

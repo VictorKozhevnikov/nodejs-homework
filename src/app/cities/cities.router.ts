@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, json } from 'express';
 import { Connection } from 'mongoose';
 
 import { CitiesService, CitiesRepository } from '.';
@@ -11,9 +11,28 @@ export async function createCitiesRouter(connection: Connection): Promise<Router
 
   await citiesService.initializeCities();
 
-  const citiesRouter = Router().get('/', (request, response) => {
-    citiesService.getAllCities().then(cities => response.json(cities).end());
-  });
+  const citiesRouter = Router()
+    .use(json())
+    // guard against invalid param
+    .param('cityId', (request, response, next) => {
+      const cityIdString: string = request.params.cityId;
+      const cityIdInt: number = parseInt(cityIdString, 10);
+      if (isNaN(cityIdInt) || cityIdInt < 0) {
+        response.status(404).end();
+      } else {
+        response.locals.cityIdInt = cityIdInt;
+        next();
+      }
+    })
+    .get('/', (request, response) => {
+      citiesService.getAllCities().then(cities => response.json(cities).end());
+    })
+    .post('/', (request, response) => {
+      citiesService.addCity(request.body).then(city => response.json(city).end());
+    })
+    .get('/:cityId', (request, response) => {
+      citiesService.getCity(response.locals.cityIdInt).then(city => response.json(city).end());
+    });
 
   return citiesRouter;
 }
