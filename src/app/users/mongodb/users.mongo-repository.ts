@@ -17,6 +17,10 @@ export class UsersMongoRepository implements UsersRepository {
     return this.UserModel.find().exec();
   }
 
+  public deleteUser(userId: number): Promise<void> {
+    return this.UserModel.remove({ id: userId }).exec();
+  }
+
   public async initializeUsers(users: Array<User>): Promise<void> {
     await this.UserModel.remove({}).exec();
     await this.UserModel.insertMany(users);

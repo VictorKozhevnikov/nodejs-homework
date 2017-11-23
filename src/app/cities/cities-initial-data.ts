@@ -36499,7 +36499,7 @@
    city: 'Fortin Falcon',
    lat: -23.05028685,
    lng: -59.84994918,
-   pop: -99,
+   pop: 99,
    country: 'Paraguay',
    province: 'Presidente Hayes'
  },
@@ -41931,7 +41931,7 @@
    city: 'Kavache',
    lat: 70.73329104,
    lng: 136.2166361,
-   pop: -99,
+   pop: 99,
    country: 'Russia',
    province: 'Sakha (Yakutia)'
  },
