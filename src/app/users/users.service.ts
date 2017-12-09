@@ -1,15 +1,15 @@
-import Lowdb = require('lowdb');
 import { User } from './user';
 import { users as initialUsers } from './users-initial-collection';
+import { UsersRepository } from './users.repository';
 
 export class UserService {
-  public constructor(private readonly db: Lowdb) {}
+  public constructor(private readonly repository: UsersRepository) {}
 
-  public getAllUsers(): Array<User> {
-    return this.db.get('users').value();
+  public getAllUsers(): Promise<Array<User>> {
+    return this.repository.getAllUsers();
   }
 
-  public initializeUsers(): void {
-    this.db.set('users', initialUsers).write();
+  public initializeUsers(): Promise<void> {
+    return this.repository.initializeUsers(initialUsers);
   }
 }

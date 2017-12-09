@@ -1,22 +1,22 @@
 export const products = [
   {
     id: 0,
-    name: 'id consectetur non labore',
+    title: 'id consectetur non labore',
     releaseYear: 1988,
     rating: 2.15,
     category: 'adventure',
     cast: [
       {
-        name: 'Chang Casey'
+        title: 'Chang Casey'
       },
       {
-        name: 'Cherry Mills'
+        title: 'Cherry Mills'
       },
       {
-        name: 'Watkins Howard'
+        title: 'Watkins Howard'
       },
       {
-        name: 'Marylou Fowler'
+        title: 'Marylou Fowler'
       }
     ],
     director: 'Jeanne Frazier',
@@ -27,19 +27,19 @@ export const products = [
   },
   {
     id: 1,
-    name: 'cupidatat enim incididunt aliqua',
+    title: 'cupidatat enim incididunt aliqua',
     releaseYear: 1989,
     rating: 2.8,
     category: 'horror',
     cast: [
       {
-        name: 'Annie Bailey'
+        title: 'Annie Bailey'
       },
       {
-        name: 'Kennedy Justice'
+        title: 'Kennedy Justice'
       },
       {
-        name: 'Guadalupe Price'
+        title: 'Guadalupe Price'
       }
     ],
     director: 'Reyes Lambert',
@@ -50,22 +50,22 @@ export const products = [
   },
   {
     id: 2,
-    name: 'laboris ullamco sit sunt',
+    title: 'laboris ullamco sit sunt',
     releaseYear: 2013,
     rating: 2.67,
     category: 'action',
     cast: [
       {
-        name: 'Conrad Waller'
+        title: 'Conrad Waller'
       },
       {
-        name: 'Fitzgerald Kerr'
+        title: 'Fitzgerald Kerr'
       },
       {
-        name: 'Delgado Bentley'
+        title: 'Delgado Bentley'
       },
       {
-        name: 'York Brown'
+        title: 'York Brown'
       }
     ],
     director: 'Clarice Rollins',
@@ -76,22 +76,22 @@ export const products = [
   },
   {
     id: 3,
-    name: 'est sunt deserunt minim',
+    title: 'est sunt deserunt minim',
     releaseYear: 2015,
     rating: 3.6,
     category: 'horror',
     cast: [
       {
-        name: 'Vivian Lancaster'
+        title: 'Vivian Lancaster'
       },
       {
-        name: 'Whitfield Fisher'
+        title: 'Whitfield Fisher'
       },
       {
-        name: 'Briana Walter'
+        title: 'Briana Walter'
       },
       {
-        name: 'Eddie Crosby'
+        title: 'Eddie Crosby'
       }
     ],
     director: 'Patterson Ellison',
@@ -102,22 +102,22 @@ export const products = [
   },
   {
     id: 4,
-    name: 'deserunt ad non quis',
+    title: 'deserunt ad non quis',
     releaseYear: 2014,
     rating: 3.91,
     category: 'adventure',
     cast: [
       {
-        name: 'Michael Rose'
+        title: 'Michael Rose'
       },
       {
-        name: 'Conley Mckenzie'
+        title: 'Conley Mckenzie'
       },
       {
-        name: 'Chavez Hawkins'
+        title: 'Chavez Hawkins'
       },
       {
-        name: 'Osborne Maxwell'
+        title: 'Osborne Maxwell'
       }
     ],
     director: 'Elliott Villarreal',
@@ -128,16 +128,16 @@ export const products = [
   },
   {
     id: 5,
-    name: 'dolor ea nostrud tempor',
+    title: 'dolor ea nostrud tempor',
     releaseYear: 1986,
     rating: 3.12,
     category: 'horror',
     cast: [
       {
-        name: 'Moss Wiley'
+        title: 'Moss Wiley'
       },
       {
-        name: 'Duffy Wolf'
+        title: 'Duffy Wolf'
       }
     ],
     director: 'Burt Massey',
@@ -148,16 +148,16 @@ export const products = [
   },
   {
     id: 6,
-    name: 'et voluptate anim velit',
+    title: 'et voluptate anim velit',
     releaseYear: 2011,
     rating: 4.66,
     category: 'western',
     cast: [
       {
-        name: 'Abby Simmons'
+        title: 'Abby Simmons'
       },
       {
-        name: 'Marguerite Cummings'
+        title: 'Marguerite Cummings'
       }
     ],
     director: 'Patsy Armstrong',
@@ -168,19 +168,19 @@ export const products = [
   },
   {
     id: 7,
-    name: 'enim voluptate labore cillum',
+    title: 'enim voluptate labore cillum',
     releaseYear: 1981,
     rating: 2.21,
     category: 'thriller',
     cast: [
       {
-        name: 'Anthony Stevenson'
+        title: 'Anthony Stevenson'
       },
       {
-        name: 'Stacey Riggs'
+        title: 'Stacey Riggs'
       },
       {
-        name: 'Bell Shaffer'
+        title: 'Bell Shaffer'
       }
     ],
     director: 'Ofelia Walls',
@@ -191,19 +191,19 @@ export const products = [
   },
   {
     id: 8,
-    name: 'dolor culpa commodo ex',
+    title: 'dolor culpa commodo ex',
     releaseYear: 1984,
     rating: 2.14,
     category: 'horror',
     cast: [
       {
-        name: 'Tate Finley'
+        title: 'Tate Finley'
       },
       {
-        name: 'Nguyen Swanson'
+        title: 'Nguyen Swanson'
       },
       {
-        name: 'Kelly Tanner'
+        title: 'Kelly Tanner'
       }
     ],
     director: 'Burch Shepherd',
@@ -214,16 +214,16 @@ export const products = [
   },
   {
     id: 9,
-    name: 'officia enim magna officia',
+    title: 'officia enim magna officia',
     releaseYear: 2007,
     rating: 2.85,
     category: 'animation',
     cast: [
       {
-        name: 'Rosemarie Dominguez'
+        title: 'Rosemarie Dominguez'
       },
       {
-        name: 'Teri Puckett'
+        title: 'Teri Puckett'
       }
     ],
     director: 'Sonia Mercer',
@@ -234,19 +234,19 @@ export const products = [
   },
   {
     id: 10,
-    name: 'nostrud id adipisicing proident',
+    title: 'nostrud id adipisicing proident',
     releaseYear: 1982,
     rating: 3.4,
     category: 'thriller',
     cast: [
       {
-        name: 'Martin Petersen'
+        title: 'Martin Petersen'
       },
       {
-        name: 'Beryl Hampton'
+        title: 'Beryl Hampton'
       },
       {
-        name: 'Julianne Morrow'
+        title: 'Julianne Morrow'
       }
     ],
     director: 'Walter Cameron',
@@ -257,22 +257,22 @@ export const products = [
   },
   {
     id: 11,
-    name: 'veniam magna ex aliqua',
+    title: 'veniam magna ex aliqua',
     releaseYear: 1997,
     rating: 3.66,
     category: 'animation',
     cast: [
       {
-        name: 'Nielsen Robertson'
+        title: 'Nielsen Robertson'
       },
       {
-        name: 'Vickie Reed'
+        title: 'Vickie Reed'
       },
       {
-        name: 'Waters Estrada'
+        title: 'Waters Estrada'
       },
       {
-        name: 'Vinson Sims'
+        title: 'Vinson Sims'
       }
     ],
     director: 'Lesley Byrd',
@@ -283,19 +283,19 @@ export const products = [
   },
   {
     id: 12,
-    name: 'ullamco proident amet magna',
+    title: 'ullamco proident amet magna',
     releaseYear: 1988,
     rating: 3.15,
     category: 'thriller',
     cast: [
       {
-        name: 'Sharon Hicks'
+        title: 'Sharon Hicks'
       },
       {
-        name: 'Marina Case'
+        title: 'Marina Case'
       },
       {
-        name: 'Mayra Harper'
+        title: 'Mayra Harper'
       }
     ],
     director: 'Barron Graham',
@@ -306,16 +306,16 @@ export const products = [
   },
   {
     id: 13,
-    name: 'occaecat enim velit in',
+    title: 'occaecat enim velit in',
     releaseYear: 1981,
     rating: 4.91,
     category: 'thriller',
     cast: [
       {
-        name: 'Kaitlin Dillard'
+        title: 'Kaitlin Dillard'
       },
       {
-        name: 'Ochoa Rogers'
+        title: 'Ochoa Rogers'
       }
     ],
     director: 'Lula Colon',
@@ -326,22 +326,22 @@ export const products = [
   },
   {
     id: 14,
-    name: 'et in ad in',
+    title: 'et in ad in',
     releaseYear: 1993,
     rating: 4.87,
     category: 'western',
     cast: [
       {
-        name: 'Hoover Mcintyre'
+        title: 'Hoover Mcintyre'
       },
       {
-        name: 'Rush Copeland'
+        title: 'Rush Copeland'
       },
       {
-        name: 'James Shelton'
+        title: 'James Shelton'
       },
       {
-        name: 'Kris Christian'
+        title: 'Kris Christian'
       }
     ],
     director: 'Avery Molina',
@@ -352,16 +352,16 @@ export const products = [
   },
   {
     id: 15,
-    name: 'ullamco nostrud quis ut',
+    title: 'ullamco nostrud quis ut',
     releaseYear: 2003,
     rating: 3.01,
     category: 'animation',
     cast: [
       {
-        name: 'Blanca House'
+        title: 'Blanca House'
       },
       {
-        name: 'Kelly Rosales'
+        title: 'Kelly Rosales'
       }
     ],
     director: 'Lessie King',
@@ -372,22 +372,22 @@ export const products = [
   },
   {
     id: 16,
-    name: 'consequat aliquip est irure',
+    title: 'consequat aliquip est irure',
     releaseYear: 2012,
     rating: 4.65,
     category: 'animation',
     cast: [
       {
-        name: 'Gena Tyson'
+        title: 'Gena Tyson'
       },
       {
-        name: 'Jewell Morse'
+        title: 'Jewell Morse'
       },
       {
-        name: 'Howard Horn'
+        title: 'Howard Horn'
       },
       {
-        name: 'Robles Herman'
+        title: 'Robles Herman'
       }
     ],
     director: 'Conner Crawford',
@@ -398,16 +398,16 @@ export const products = [
   },
   {
     id: 17,
-    name: 'ad dolor sit occaecat',
+    title: 'ad dolor sit occaecat',
     releaseYear: 1996,
     rating: 4.98,
     category: 'western',
     cast: [
       {
-        name: 'Pam Peterson'
+        title: 'Pam Peterson'
       },
       {
-        name: 'Stafford Le'
+        title: 'Stafford Le'
       }
     ],
     director: 'Walters Sloan',
@@ -418,22 +418,22 @@ export const products = [
   },
   {
     id: 18,
-    name: 'aliquip velit anim quis',
+    title: 'aliquip velit anim quis',
     releaseYear: 1988,
     rating: 3.87,
     category: 'action',
     cast: [
       {
-        name: 'Stout Wade'
+        title: 'Stout Wade'
       },
       {
-        name: 'Margret Harris'
+        title: 'Margret Harris'
       },
       {
-        name: 'Obrien Taylor'
+        title: 'Obrien Taylor'
       },
       {
-        name: 'Santiago Whitfield'
+        title: 'Santiago Whitfield'
       }
     ],
     director: 'Joyce Hurley',
@@ -444,22 +444,22 @@ export const products = [
   },
   {
     id: 19,
-    name: 'laboris nostrud aute minim',
+    title: 'laboris nostrud aute minim',
     releaseYear: 1996,
     rating: 3.26,
     category: 'animation',
     cast: [
       {
-        name: 'Collins Mcgowan'
+        title: 'Collins Mcgowan'
       },
       {
-        name: 'Laurel Levine'
+        title: 'Laurel Levine'
       },
       {
-        name: 'Duke Sawyer'
+        title: 'Duke Sawyer'
       },
       {
-        name: 'Marion Moore'
+        title: 'Marion Moore'
       }
     ],
     director: 'Bradford Franks',
@@ -470,22 +470,22 @@ export const products = [
   },
   {
     id: 20,
-    name: 'velit ipsum sint reprehenderit',
+    title: 'velit ipsum sint reprehenderit',
     releaseYear: 1994,
     rating: 2.23,
     category: 'animation',
     cast: [
       {
-        name: 'Fern Mercado'
+        title: 'Fern Mercado'
       },
       {
-        name: 'Compton Fitzgerald'
+        title: 'Compton Fitzgerald'
       },
       {
-        name: 'Bray Browning'
+        title: 'Bray Browning'
       },
       {
-        name: 'Krista York'
+        title: 'Krista York'
       }
     ],
     director: 'Savannah Nelson',
@@ -496,22 +496,22 @@ export const products = [
   },
   {
     id: 21,
-    name: 'non ad do culpa',
+    title: 'non ad do culpa',
     releaseYear: 2000,
     rating: 4.09,
     category: 'animation',
     cast: [
       {
-        name: 'Helene Mcconnell'
+        title: 'Helene Mcconnell'
       },
       {
-        name: 'Acevedo Fulton'
+        title: 'Acevedo Fulton'
       },
       {
-        name: 'Lesa Cross'
+        title: 'Lesa Cross'
       },
       {
-        name: 'Alisa Jacobson'
+        title: 'Alisa Jacobson'
       }
     ],
     director: 'Rosanne Paul',
@@ -522,19 +522,19 @@ export const products = [
   },
   {
     id: 22,
-    name: 'labore mollit pariatur commodo',
+    title: 'labore mollit pariatur commodo',
     releaseYear: 2011,
     rating: 4.8,
     category: 'horror',
     cast: [
       {
-        name: 'Lauren Bennett'
+        title: 'Lauren Bennett'
       },
       {
-        name: 'Levy Robbins'
+        title: 'Levy Robbins'
       },
       {
-        name: 'Dionne Buckner'
+        title: 'Dionne Buckner'
       }
     ],
     director: 'Melva Matthews',
@@ -545,22 +545,22 @@ export const products = [
   },
   {
     id: 23,
-    name: 'et reprehenderit non proident',
+    title: 'et reprehenderit non proident',
     releaseYear: 1980,
     rating: 3.08,
     category: 'action',
     cast: [
       {
-        name: 'Campbell Stone'
+        title: 'Campbell Stone'
       },
       {
-        name: 'Nichols Dunlap'
+        title: 'Nichols Dunlap'
       },
       {
-        name: 'Scott Espinoza'
+        title: 'Scott Espinoza'
       },
       {
-        name: 'Yolanda Mccarty'
+        title: 'Yolanda Mccarty'
       }
     ],
     director: 'Aguirre Harmon',
@@ -571,16 +571,16 @@ export const products = [
   },
   {
     id: 24,
-    name: 'ea do amet eiusmod',
+    title: 'ea do amet eiusmod',
     releaseYear: 1995,
     rating: 2.79,
     category: 'action',
     cast: [
       {
-        name: 'Banks Dyer'
+        title: 'Banks Dyer'
       },
       {
-        name: 'Misty Bernard'
+        title: 'Misty Bernard'
       }
     ],
     director: 'Sparks Noble',
@@ -591,16 +591,16 @@ export const products = [
   },
   {
     id: 25,
-    name: 'enim aliquip tempor commodo',
+    title: 'enim aliquip tempor commodo',
     releaseYear: 1994,
     rating: 3.09,
     category: 'animation',
     cast: [
       {
-        name: 'Lakisha Chase'
+        title: 'Lakisha Chase'
       },
       {
-        name: 'Jacobs Snider'
+        title: 'Jacobs Snider'
       }
     ],
     director: 'Michele Black',
@@ -611,22 +611,22 @@ export const products = [
   },
   {
     id: 26,
-    name: 'est aute do sit',
+    title: 'est aute do sit',
     releaseYear: 1983,
     rating: 3.09,
     category: 'action',
     cast: [
       {
-        name: 'Colon Yates'
+        title: 'Colon Yates'
       },
       {
-        name: 'Gilmore Sherman'
+        title: 'Gilmore Sherman'
       },
       {
-        name: 'Salazar Henry'
+        title: 'Salazar Henry'
       },
       {
-        name: 'Millicent Fry'
+        title: 'Millicent Fry'
       }
     ],
     director: 'Leigh Gonzalez',
@@ -637,22 +637,22 @@ export const products = [
   },
   {
     id: 27,
-    name: 'ut culpa nostrud pariatur',
+    title: 'ut culpa nostrud pariatur',
     releaseYear: 2014,
     rating: 2.51,
     category: 'animation',
     cast: [
       {
-        name: 'Miles Murphy'
+        title: 'Miles Murphy'
       },
       {
-        name: 'Odom Nguyen'
+        title: 'Odom Nguyen'
       },
       {
-        name: 'Christine Peters'
+        title: 'Christine Peters'
       },
       {
-        name: 'Pierce Dotson'
+        title: 'Pierce Dotson'
       }
     ],
     director: 'Josefina Watts',
@@ -663,22 +663,22 @@ export const products = [
   },
   {
     id: 28,
-    name: 'consequat ea eiusmod occaecat',
+    title: 'consequat ea eiusmod occaecat',
     releaseYear: 1995,
     rating: 4.52,
     category: 'thriller',
     cast: [
       {
-        name: 'Alexander Padilla'
+        title: 'Alexander Padilla'
       },
       {
-        name: 'Ferrell Ortega'
+        title: 'Ferrell Ortega'
       },
       {
-        name: 'Alexandra Craft'
+        title: 'Alexandra Craft'
       },
       {
-        name: 'Delaney Boyle'
+        title: 'Delaney Boyle'
       }
     ],
     director: 'Wilkerson Hughes',
@@ -689,16 +689,16 @@ export const products = [
   },
   {
     id: 29,
-    name: 'consectetur cillum non aute',
+    title: 'consectetur cillum non aute',
     releaseYear: 1996,
     rating: 2.03,
     category: 'adventure',
     cast: [
       {
-        name: 'Tina Carney'
+        title: 'Tina Carney'
       },
       {
-        name: 'Shelia Neal'
+        title: 'Shelia Neal'
       }
     ],
     director: 'Tia Slater',
@@ -709,16 +709,16 @@ export const products = [
   },
   {
     id: 30,
-    name: 'consectetur excepteur enim consectetur',
+    title: 'consectetur excepteur enim consectetur',
     releaseYear: 1993,
     rating: 2.62,
     category: 'thriller',
     cast: [
       {
-        name: 'Luz Hoffman'
+        title: 'Luz Hoffman'
       },
       {
-        name: 'Wade Pugh'
+        title: 'Wade Pugh'
       }
     ],
     director: 'Gibbs Kane',
@@ -729,19 +729,19 @@ export const products = [
   },
   {
     id: 31,
-    name: 'sint ex fugiat aute',
+    title: 'sint ex fugiat aute',
     releaseYear: 1985,
     rating: 2.92,
     category: 'thriller',
     cast: [
       {
-        name: 'Simon Sanchez'
+        title: 'Simon Sanchez'
       },
       {
-        name: 'Osborn Melton'
+        title: 'Osborn Melton'
       },
       {
-        name: 'Ora Cervantes'
+        title: 'Ora Cervantes'
       }
     ],
     director: 'Kara Chavez',
@@ -752,19 +752,19 @@ export const products = [
   },
   {
     id: 32,
-    name: 'elit voluptate deserunt ex',
+    title: 'elit voluptate deserunt ex',
     releaseYear: 1980,
     rating: 3.11,
     category: 'action',
     cast: [
       {
-        name: 'Maribel Hammond'
+        title: 'Maribel Hammond'
       },
       {
-        name: 'Morris Curtis'
+        title: 'Morris Curtis'
       },
       {
-        name: 'Tamara Hatfield'
+        title: 'Tamara Hatfield'
       }
     ],
     director: 'Vance Terry',
@@ -775,16 +775,16 @@ export const products = [
   },
   {
     id: 33,
-    name: 'deserunt do nulla voluptate',
+    title: 'deserunt do nulla voluptate',
     releaseYear: 1983,
     rating: 2.33,
     category: 'animation',
     cast: [
       {
-        name: 'Sargent Vargas'
+        title: 'Sargent Vargas'
       },
       {
-        name: 'Robin Kirby'
+        title: 'Robin Kirby'
       }
     ],
     director: 'Farrell Albert',
@@ -795,16 +795,16 @@ export const products = [
   },
   {
     id: 34,
-    name: 'veniam do aliqua pariatur',
+    title: 'veniam do aliqua pariatur',
     releaseYear: 2003,
     rating: 4.26,
     category: 'thriller',
     cast: [
       {
-        name: 'Mcintosh Garrison'
+        title: 'Mcintosh Garrison'
       },
       {
-        name: 'Antonia Thompson'
+        title: 'Antonia Thompson'
       }
     ],
     director: 'Higgins Roman',
@@ -815,19 +815,19 @@ export const products = [
   },
   {
     id: 35,
-    name: 'occaecat dolor id consectetur',
+    title: 'occaecat dolor id consectetur',
     releaseYear: 2003,
     rating: 3.77,
     category: 'horror',
     cast: [
       {
-        name: 'Lang French'
+        title: 'Lang French'
       },
       {
-        name: 'Burke Clarke'
+        title: 'Burke Clarke'
       },
       {
-        name: 'Mejia Rhodes'
+        title: 'Mejia Rhodes'
       }
     ],
     director: 'Cheryl Porter',
@@ -838,19 +838,19 @@ export const products = [
   },
   {
     id: 36,
-    name: 'anim cillum do quis',
+    title: 'anim cillum do quis',
     releaseYear: 1998,
     rating: 4.8,
     category: 'western',
     cast: [
       {
-        name: 'Sharlene Charles'
+        title: 'Sharlene Charles'
       },
       {
-        name: 'Patel Alvarado'
+        title: 'Patel Alvarado'
       },
       {
-        name: 'Elma Jackson'
+        title: 'Elma Jackson'
       }
     ],
     director: 'Gonzalez Lucas',
@@ -861,22 +861,22 @@ export const products = [
   },
   {
     id: 37,
-    name: 'ex cupidatat dolore minim',
+    title: 'ex cupidatat dolore minim',
     releaseYear: 1994,
     rating: 3.54,
     category: 'action',
     cast: [
       {
-        name: 'Mandy Howell'
+        title: 'Mandy Howell'
       },
       {
-        name: 'Callahan Summers'
+        title: 'Callahan Summers'
       },
       {
-        name: 'Holcomb Carter'
+        title: 'Holcomb Carter'
       },
       {
-        name: 'Oneil Trevino'
+        title: 'Oneil Trevino'
       }
     ],
     director: 'Charlene Goodwin',
@@ -887,22 +887,22 @@ export const products = [
   },
   {
     id: 38,
-    name: 'exercitation dolore ut veniam',
+    title: 'exercitation dolore ut veniam',
     releaseYear: 1992,
     rating: 4.76,
     category: 'horror',
     cast: [
       {
-        name: 'Marks Marshall'
+        title: 'Marks Marshall'
       },
       {
-        name: 'Annabelle Sargent'
+        title: 'Annabelle Sargent'
       },
       {
-        name: 'Mcmillan Welch'
+        title: 'Mcmillan Welch'
       },
       {
-        name: 'Olive Daniels'
+        title: 'Olive Daniels'
       }
     ],
     director: 'Chan Johnson',
@@ -913,19 +913,19 @@ export const products = [
   },
   {
     id: 39,
-    name: 'anim consectetur aliqua incididunt',
+    title: 'anim consectetur aliqua incididunt',
     releaseYear: 2012,
     rating: 4.15,
     category: 'adventure',
     cast: [
       {
-        name: 'Maria Blair'
+        title: 'Maria Blair'
       },
       {
-        name: 'Russell Benson'
+        title: 'Russell Benson'
       },
       {
-        name: 'Cortez Mcknight'
+        title: 'Cortez Mcknight'
       }
     ],
     director: 'Roslyn Schwartz',
@@ -936,19 +936,19 @@ export const products = [
   },
   {
     id: 40,
-    name: 'eiusmod laborum cillum tempor',
+    title: 'eiusmod laborum cillum tempor',
     releaseYear: 1990,
     rating: 3.42,
     category: 'thriller',
     cast: [
       {
-        name: 'Petersen Holcomb'
+        title: 'Petersen Holcomb'
       },
       {
-        name: 'Trevino Potts'
+        title: 'Trevino Potts'
       },
       {
-        name: 'Shaffer Farmer'
+        title: 'Shaffer Farmer'
       }
     ],
     director: 'Genevieve Drake',
@@ -959,22 +959,22 @@ export const products = [
   },
   {
     id: 41,
-    name: 'mollit qui sit pariatur',
+    title: 'mollit qui sit pariatur',
     releaseYear: 1992,
     rating: 4.1,
     category: 'action',
     cast: [
       {
-        name: 'Joseph Langley'
+        title: 'Joseph Langley'
       },
       {
-        name: 'Coleman Delacruz'
+        title: 'Coleman Delacruz'
       },
       {
-        name: 'Whitehead Key'
+        title: 'Whitehead Key'
       },
       {
-        name: 'Tanisha Clay'
+        title: 'Tanisha Clay'
       }
     ],
     director: 'Graham Finch',
@@ -985,16 +985,16 @@ export const products = [
   },
   {
     id: 42,
-    name: 'aute esse officia pariatur',
+    title: 'aute esse officia pariatur',
     releaseYear: 2007,
     rating: 2.38,
     category: 'thriller',
     cast: [
       {
-        name: 'Carlson Morin'
+        title: 'Carlson Morin'
       },
       {
-        name: 'Roberson Atkinson'
+        title: 'Roberson Atkinson'
       }
     ],
     director: 'Merle Dean',
@@ -1005,16 +1005,16 @@ export const products = [
   },
   {
     id: 43,
-    name: 'mollit quis amet aliqua',
+    title: 'mollit quis amet aliqua',
     releaseYear: 1998,
     rating: 4.16,
     category: 'horror',
     cast: [
       {
-        name: 'Blanche Gordon'
+        title: 'Blanche Gordon'
       },
       {
-        name: 'Neva Lang'
+        title: 'Neva Lang'
       }
     ],
     director: 'Alma Montgomery',
@@ -1025,16 +1025,16 @@ export const products = [
   },
   {
     id: 44,
-    name: 'laboris culpa aute incididunt',
+    title: 'laboris culpa aute incididunt',
     releaseYear: 1982,
     rating: 2.31,
     category: 'animation',
     cast: [
       {
-        name: 'Mari Mccall'
+        title: 'Mari Mccall'
       },
       {
-        name: 'Christi Bray'
+        title: 'Christi Bray'
       }
     ],
     director: 'Roxanne Mcfarland',
@@ -1045,16 +1045,16 @@ export const products = [
   },
   {
     id: 45,
-    name: 'aliqua labore in commodo',
+    title: 'aliqua labore in commodo',
     releaseYear: 2016,
     rating: 2.52,
     category: 'horror',
     cast: [
       {
-        name: 'Woods Blackburn'
+        title: 'Woods Blackburn'
       },
       {
-        name: 'Bernice Craig'
+        title: 'Bernice Craig'
       }
     ],
     director: 'Sarah Guthrie',
@@ -1065,22 +1065,22 @@ export const products = [
   },
   {
     id: 46,
-    name: 'mollit eiusmod aliqua duis',
+    title: 'mollit eiusmod aliqua duis',
     releaseYear: 1985,
     rating: 4.16,
     category: 'action',
     cast: [
       {
-        name: 'Stevens Mcmahon'
+        title: 'Stevens Mcmahon'
       },
       {
-        name: 'Hollie Wyatt'
+        title: 'Hollie Wyatt'
       },
       {
-        name: 'Shannon Stevens'
+        title: 'Shannon Stevens'
       },
       {
-        name: 'Craig Castaneda'
+        title: 'Craig Castaneda'
       }
     ],
     director: 'Gonzales Wallace',
@@ -1091,16 +1091,16 @@ export const products = [
   },
   {
     id: 47,
-    name: 'voluptate irure dolor voluptate',
+    title: 'voluptate irure dolor voluptate',
     releaseYear: 1981,
     rating: 3.43,
     category: 'thriller',
     cast: [
       {
-        name: 'Janice Rojas'
+        title: 'Janice Rojas'
       },
       {
-        name: 'Munoz Mcclain'
+        title: 'Munoz Mcclain'
       }
     ],
     director: 'Noble Peck',
@@ -1111,22 +1111,22 @@ export const products = [
   },
   {
     id: 48,
-    name: 'dolor quis aliquip cillum',
+    title: 'dolor quis aliquip cillum',
     releaseYear: 2008,
     rating: 3.42,
     category: 'thriller',
     cast: [
       {
-        name: 'Nanette Oliver'
+        title: 'Nanette Oliver'
       },
       {
-        name: 'Woodard Baxter'
+        title: 'Woodard Baxter'
       },
       {
-        name: 'Edith Reeves'
+        title: 'Edith Reeves'
       },
       {
-        name: 'Rebecca Hunt'
+        title: 'Rebecca Hunt'
       }
     ],
     director: 'Nadine Green',
@@ -1137,22 +1137,22 @@ export const products = [
   },
   {
     id: 49,
-    name: 'ipsum laboris cupidatat elit',
+    title: 'ipsum laboris cupidatat elit',
     releaseYear: 1988,
     rating: 3.19,
     category: 'thriller',
     cast: [
       {
-        name: 'Maynard Sexton'
+        title: 'Maynard Sexton'
       },
       {
-        name: 'Frank Stewart'
+        title: 'Frank Stewart'
       },
       {
-        name: 'Ortega Silva'
+        title: 'Ortega Silva'
       },
       {
-        name: 'Barber Knox'
+        title: 'Barber Knox'
       }
     ],
     director: 'Carey Manning',
@@ -1163,16 +1163,16 @@ export const products = [
   },
   {
     id: 50,
-    name: 'elit do ad sint',
+    title: 'elit do ad sint',
     releaseYear: 1980,
     rating: 2.57,
     category: 'animation',
     cast: [
       {
-        name: 'Snow Cline'
+        title: 'Snow Cline'
       },
       {
-        name: 'Lora Perez'
+        title: 'Lora Perez'
       }
     ],
     director: 'Stella Mcintosh',
@@ -1183,16 +1183,16 @@ export const products = [
   },
   {
     id: 51,
-    name: 'aliqua ex ullamco mollit',
+    title: 'aliqua ex ullamco mollit',
     releaseYear: 1985,
     rating: 4.02,
     category: 'action',
     cast: [
       {
-        name: 'Esperanza Sears'
+        title: 'Esperanza Sears'
       },
       {
-        name: 'Roberta Arnold'
+        title: 'Roberta Arnold'
       }
     ],
     director: 'Lorna Owens',
@@ -1203,19 +1203,19 @@ export const products = [
   },
   {
     id: 52,
-    name: 'magna deserunt ipsum id',
+    title: 'magna deserunt ipsum id',
     releaseYear: 1996,
     rating: 4.19,
     category: 'horror',
     cast: [
       {
-        name: 'Jacklyn Leach'
+        title: 'Jacklyn Leach'
       },
       {
-        name: 'Thompson Mcfadden'
+        title: 'Thompson Mcfadden'
       },
       {
-        name: 'Johnnie Rivers'
+        title: 'Johnnie Rivers'
       }
     ],
     director: 'Diana Roach',
@@ -1226,19 +1226,19 @@ export const products = [
   },
   {
     id: 53,
-    name: 'et elit officia elit',
+    title: 'et elit officia elit',
     releaseYear: 2002,
     rating: 4.05,
     category: 'animation',
     cast: [
       {
-        name: 'Paul Vasquez'
+        title: 'Paul Vasquez'
       },
       {
-        name: 'Alta Duran'
+        title: 'Alta Duran'
       },
       {
-        name: 'Boyer Deleon'
+        title: 'Boyer Deleon'
       }
     ],
     director: 'Vega Smith',

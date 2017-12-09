@@ -1,10 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import * as passport from 'passport';
 
-import { authService } from './auth.service';
-
-// export const verifyToken = passport.authenticate('google');
-export const verifyToken = (req, res, next) => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
   console.log('check authentication');
   if (req.isAuthenticated) {
     return next();

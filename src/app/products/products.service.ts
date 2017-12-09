@@ -6,46 +6,38 @@ import { products } from './products-initial-collection';
 export class ProductsService {
   private nextId = 71;
 
-  public constructor(private readonly repository: ProductsRepository) {
-  }
+  public constructor(private readonly repository: ProductsRepository) {}
 
-  public getAllProducts(): Array<Product> {
+  public getAllProducts(): Promise<Array<Product>> {
     return this.repository.getAllProducts();
   }
 
-  public getProduct(productId: number): Product {
+  public getProduct(productId: number): Promise<Product | undefined> {
     return this.repository.getProduct(productId);
   }
 
   // returns newly created product
-  public addProduct(productData: ProductData): Product {
+  public async addProduct(productData: ProductData): Promise<Product> {
     // validate data and form a productData object
 
     // create a product
     const product = this.makeProduct(productData);
 
     // store it to db
-    this.repository.addProduct(product);
+    await this.repository.addProduct(product);
 
     return product;
   }
 
-  public initializeProducts(): void {
-    this.repository.initializeProducts(products);
+  public initializeProducts(): Promise<void> {
+    return this.repository.initializeProducts(products);
   }
 
   private makeProduct(productData: ProductData): Product {
     return {
       id: this.nextId++,
-      name: productData.name,
+      title: productData.name,
       releaseYear: productData.releaseYear
-      // rating: productData.rating || 0,
-      // category: productData.category,
-      // cast: productData.cast,
-      // director: productData.director,
-      // summary: productData.summary,
-      // posterUrl: productData.posterUrl,
-      // runtime: productData.runtime
     };
   }
 }

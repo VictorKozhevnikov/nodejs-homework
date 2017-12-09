@@ -1,19 +1,14 @@
-import Lowdb = require('lowdb');
-
-import { ProductReview } from './product-review';
-import { initialReviews } from './product-reviews-initial-collection';
+import { Review, ReviewsRepository } from '.';
+import { initialReviews } from './reviews-initial-collection';
 
 export class ReviewsService {
-  public constructor(private readonly db: Lowdb) {}
+  public constructor(private readonly repository: ReviewsRepository) {}
 
-  public getProductReviews(productId: number): Array<ProductReview> {
-    return this.db
-      .get('reviews')
-      .filter({ productId })
-      .value();
+  public getProductReviews(productId: number): Promise<Array<Review>> {
+    return this.repository.getProductReviews(productId);
   }
 
-  public initializeReviews(): void {
-    this.db.set('reviews', initialReviews).write();
+  public initializeReviews(): Promise<void> {
+    return this.repository.initializeReviews(initialReviews);
   }
 }

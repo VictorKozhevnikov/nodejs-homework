@@ -1,16 +1,20 @@
 import { Router } from 'express';
-import Lowdb = require('lowdb');
-import MemoryAdapter = require('lowdb/adapters/Memory');
+import { Connection } from 'typeorm';
+
 import { UserService } from './users.service';
+import { UserEntity, UsersTypeormRepository } from './typeorm';
 
-// composition root
-const db = new Lowdb(new MemoryAdapter());
-const usersService = new UserService(db);
+export async function createUsersRouter(connection: Connection): Promise<Router> {
+  const usersRepository = new UsersTypeormRepository(connection.getRepository(UserEntity));
+  const usersService = new UserService(usersRepository);
 
-usersService.initializeUsers();
+  await usersService.initializeUsers();
 
-export const usersRouter = Router().get('/', (request, response) => {
-  const users = usersService.getAllUsers();
-  response.json(users);
-  response.end();
-});
+  const usersRouter = Router().get('/', async (request, response) => {
+    const users = await usersService.getAllUsers();
+    response.json(users);
+    response.end();
+  });
+
+  return usersRouter;
+}

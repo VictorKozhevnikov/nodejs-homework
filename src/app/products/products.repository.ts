@@ -1,30 +1,11 @@
-import Lowdb = require('lowdb');
-
 import { Product } from './product';
-import { ProductData } from './product-data';
 
-export class ProductsRepository {
-  public constructor(private readonly db: Lowdb) {}
+export interface ProductsRepository {
+  getAllProducts(): Promise<Array<Product>>;
 
-  public getAllProducts(): Array<Product> {
-    return this.db.get('products').value();
-  }
+  getProduct(productId: number): Promise<Product | undefined>;
 
-  public getProduct(productId: number): Product {
-    return this.db
-      .get('products')
-      .find({ id: productId })
-      .value();
-  }
+  addProduct(product: Product): Promise<void>;
 
-  public addProduct(product: Product): void {
-    this.db
-      .get('products')
-      .push(product)
-      .write();
-  }
-
-  public initializeProducts(products: Array<Product>): void {
-    this.db.set('products', products).write();
-  }
+  initializeProducts(products: Array<Product>): Promise<void>;
 }
