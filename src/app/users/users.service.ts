@@ -9,6 +9,10 @@ export class UserService {
     return this.repository.getAllUsers();
   }
 
+  public deleteUser(userId: number): Promise<void> {
+    return this.repository.deleteUser(userId);
+  }
+
   public initializeUsers(): Promise<void> {
     return this.repository.initializeUsers(initialUsers);
   }

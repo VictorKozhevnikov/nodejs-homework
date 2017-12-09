@@ -1,22 +1,24 @@
 import { Router } from 'express';
-import { createConnection } from 'typeorm';
-
-// import { initialize, session, authRouter, verifyToken } from './auth';
+import * as mongoose from 'mongoose';
 
 import { createProductsRouter } from './products';
 import { createUsersRouter } from './users';
+import { createCitiesRouter } from './cities';
+
+const mongoUrl = 'mongodb://localhost:27017/nodejsHomework';
 
 export async function createAppRouter(): Promise<Router> {
-  const connection = await createConnection();
-  const productsRouter = await createProductsRouter(connection);
-  const usersRouter = await createUsersRouter(connection);
+  // initialize db connections
+  const mongoConnection = mongoose.createConnection(mongoUrl);
+
+  const productsRouter = await createProductsRouter(mongoConnection);
+  const usersRouter = await createUsersRouter(mongoConnection);
+  const citiesRouter = await createCitiesRouter(mongoConnection);
 
   const appRouter = Router()
-    // .use(initialize)
-    // .use(session)
-    // .use('/api/auth', authRouter)
     .use('/api/products', productsRouter)
     .use('/api/users', usersRouter)
+    .use('/api/cities', citiesRouter)
     .get('/', (request, response) => {
       response.end('Hello, World!');
     });
