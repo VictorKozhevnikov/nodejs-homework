@@ -2,7 +2,7 @@
   "name": "kozhevnikov-nodejs",
   "version": "0.0.0",
   "description": "nodejs tutorial project",
-  "main": "dist/operations/index.ts",
+  "main": "app.js",
   "scripts": {
     "start-run": "node ./dist",
     "start": "npm run build && npm run start-run",
@@ -28,13 +28,16 @@
     "nodemon": "^1.12.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.7.0",
-    "typescript": "^2.5.2"
+    "typescript": "^2.5.2",
+    "should": "^7.1.0",
+    "supertest": "^1.0.0"
   },
   "dependencies": {
     "express": "^4.16.2",
     "mongoose": "^4.13.4",
     "reflect-metadata": "^0.1.10",
     "rxjs": "^5.4.3",
-    "typegoose": "^3.7.0"
+    "typegoose": "^3.7.0",
+    "swagger-express-mw": "^0.1.0"
   }
 }

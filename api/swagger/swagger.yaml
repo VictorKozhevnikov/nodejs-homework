@@ -1,0 +1,323 @@
+swagger: '2.0'
+info:
+  version: "0.8.0"
+  title: Nodejs homework
+  contact:
+    email: victor_kozhevnikov@epam.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+# host: petstore.swagger.io
+# basePath: /v2
+tags:
+- name: city
+  description: Operations about cities
+- name: product
+  description: Operations about products
+- name: user
+  description: Operations about user
+# schemes:
+# - http
+paths:
+  /cities:
+    x-swagger-router-controller: abc
+    get:
+      tags:
+      - city
+      summary: Gets a list of all cities
+      operationId: hello
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/City'
+    post:
+      tags:
+      - city
+      summary: Add a new city
+      operationId: addCity
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: City object that needs to be added to the database
+        required: true
+        schema:
+          $ref: '#/definitions/City'
+      responses:
+        200:
+          description: successful operation
+  /cities/{cityId}:
+    get:
+      tags:
+      - city
+      summary: Gets the city with provided id
+      operationId: getCity
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/City'
+        404:
+          description: City not found
+    put:
+      tags:
+      - city
+      summary: Delete existing city
+      operationId: updateCity
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to update
+        required: true
+        type: integer
+        format: int64
+      - name: body
+        in: body
+        description: City object that needs to be updated
+        required: true
+        schema:
+          $ref: '#/definitions/City'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/City'
+        404:
+          description: City not found
+    delete:
+      tags:
+      - city
+      summary: Delete an existing city
+      operationId: deleteCity
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to delete
+        required: true
+        type: integer
+        format: int64
+      responses:
+        404:
+          description: City not found
+  /users:
+    get:
+      tags:
+      - user
+      summary: Get all users
+      operationId: getAllUsers
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+  /users/{userId}:
+    delete:
+      tags:
+      - user
+      summary: Delete user by user id
+      operationId: deleteUser
+      parameters:
+      - name: userId
+        in: path
+        description: The id of user to delete.
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+        404:
+          description: User not found
+  /products:
+    get:
+      tags:
+      - product
+      summary: Gets a list of all products
+      operationId: getAllProducts
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+    post:
+      tags:
+      - product
+      summary: Add a new product
+      operationId: addProduct
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: Product object that needs to be added to the database
+        required: true
+        schema:
+          $ref: '#/definitions/Product'
+      responses:
+        200:
+          description: successful operation
+  /products/{productId}:
+    get:
+      tags:
+      - product
+      summary: Gets the product with provided id
+      operationId: getProduct
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        description: ID of product to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Product'
+        404:
+          description: Product not found
+    delete:
+      tags:
+      - product
+      summary: Delete an existing product
+      operationId: deleteProduct
+      parameters:
+      - name: productId
+        in: path
+        description: ID of product to delete
+        required: true
+        type: integer
+        format: int64
+      responses:
+        404:
+          description: Product not found
+  /products/{productId}/reviews:
+    get:
+      tags:
+      - product
+      summary: Gets a list of reviews for the product
+      operationId: getProductReviews
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        description: ID of product for which reviews collection is returned
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ProductReview'
+definitions:
+  City:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: Saint Petersburg
+      latitude:
+        type: number
+        minimum: -90
+        maximum: 90
+      longitude:
+        type: number
+        minimum: -180.0
+        maximum: 180.0
+      population:
+        type: integer
+        format: int64
+        minimum: 0
+      country:
+        type: string
+        example: Russia
+      province:
+        type: string
+        example: Leningrad
+  Product:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: doggie
+      releaseYear:
+        type: integer
+        format: int64
+        minimum: 0
+  ProductReview:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      productId:
+        type: integer
+        format: int64
+      userId:
+        type: integer
+        format: int64
+      rating:
+        type: number
+        minimum: 0
+        maximum: 5
+      title:
+        type: string
+        example: A very good product
+      summary:
+        type: string
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+# Added by API Auto Mocking Plugin
+host: localhost:3000
+basePath: /api
+schemes:
+ - http
