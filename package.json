@@ -28,6 +28,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "build-start": "npm run build && swagger project start",
     "test": "swagger project test",
     "start-run": "node ./dist",
     "build": "npm run lint && npm run tsc",
