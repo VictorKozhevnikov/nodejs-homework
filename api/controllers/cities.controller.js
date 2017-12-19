@@ -1,1 +1,1 @@
-module.exports = require('../../dist/app/cities/cities.controller');
+module.exports = require('../../dist/app/cities/swagger/cities.swagger-controller');

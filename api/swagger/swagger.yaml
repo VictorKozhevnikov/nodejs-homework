@@ -1,31 +1,30 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
-  version: "0.8.0"
-  title: Nodejs homework
-  contact:
-    email: victor_kozhevnikov@epam.com
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-# host: petstore.swagger.io
-# basePath: /v2
-tags:
-- name: city
-  description: Operations about cities
-- name: product
-  description: Operations about products
-- name: user
-  description: Operations about user
-# schemes:
-# - http
+  version: "0.0.1"
+  title: Hello World App
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /api
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
 paths:
   /cities:
-    x-swagger-router-controller: abc
+    x-swagger-router-controller: cities.controller
     get:
       tags:
       - city
       summary: Gets a list of all cities
-      operationId: hello
+      operationId: getAllCities
       consumes:
       - application/json
       produces:
@@ -57,6 +56,7 @@ paths:
         200:
           description: successful operation
   /cities/{cityId}:
+    x-swagger-router-controller: cities.controller
     get:
       tags:
       - city
@@ -92,7 +92,7 @@ paths:
         required: true
         type: integer
         format: int64
-      - name: body
+      - name: city
         in: body
         description: City object that needs to be updated
         required: true
@@ -120,132 +120,33 @@ paths:
       responses:
         404:
           description: City not found
-  /users:
+  /hello:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: hello_world
     get:
-      tags:
-      - user
-      summary: Get all users
-      operationId: getAllUsers
-      produces:
-      - application/json
+      description: Returns 'Hello' to the caller
+      # used as the method name of the controller
+      operationId: hello
+      parameters:
+        - name: name
+          in: query
+          description: The name of the person to whom to say hello
+          required: false
+          type: string
       responses:
-        200:
-          description: successful operation
+        "200":
+          description: Success
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/User'
-  /users/{userId}:
-    delete:
-      tags:
-      - user
-      summary: Delete user by user id
-      operationId: deleteUser
-      parameters:
-      - name: userId
-        in: path
-        description: The id of user to delete.
-        required: true
-        type: integer
-        format: int64
-      responses:
-        200:
-          description: successful operation
-        404:
-          description: User not found
-  /products:
-    get:
-      tags:
-      - product
-      summary: Gets a list of all products
-      operationId: getAllProducts
-      produces:
-      - application/json
-      responses:
-        200:
-          description: successful operation
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Product'
-    post:
-      tags:
-      - product
-      summary: Add a new product
-      operationId: addProduct
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: body
-        name: body
-        description: Product object that needs to be added to the database
-        required: true
-        schema:
-          $ref: '#/definitions/Product'
-      responses:
-        200:
-          description: successful operation
-  /products/{productId}:
-    get:
-      tags:
-      - product
-      summary: Gets the product with provided id
-      operationId: getProduct
-      produces:
-      - application/json
-      parameters:
-      - name: productId
-        in: path
-        description: ID of product to return
-        required: true
-        type: integer
-        format: int64
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/Product'
-        404:
-          description: Product not found
-    delete:
-      tags:
-      - product
-      summary: Delete an existing product
-      operationId: deleteProduct
-      parameters:
-      - name: productId
-        in: path
-        description: ID of product to delete
-        required: true
-        type: integer
-        format: int64
-      responses:
-        404:
-          description: Product not found
-  /products/{productId}/reviews:
-    get:
-      tags:
-      - product
-      summary: Gets a list of reviews for the product
-      operationId: getProductReviews
-      produces:
-      - application/json
-      parameters:
-      - name: productId
-        in: path
-        description: ID of product for which reviews collection is returned
-        required: true
-        type: integer
-        format: int64
-      responses:
-        200:
-          description: successful operation
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/ProductReview'
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
 definitions:
   City:
     type: object
@@ -274,50 +175,15 @@ definitions:
       province:
         type: string
         example: Leningrad
-  Product:
-    type: object
+  HelloWorldResponse:
+    required:
+      - message
     properties:
-      id:
-        type: integer
-        format: int64
-      name:
+      message:
         type: string
-        example: doggie
-      releaseYear:
-        type: integer
-        format: int64
-        minimum: 0
-  ProductReview:
-    type: object
+  ErrorResponse:
+    required:
+      - message
     properties:
-      id:
-        type: integer
-        format: int64
-      productId:
-        type: integer
-        format: int64
-      userId:
-        type: integer
-        format: int64
-      rating:
-        type: number
-        minimum: 0
-        maximum: 5
-      title:
+      message:
         type: string
-        example: A very good product
-      summary:
-        type: string
-  User:
-    type: object
-    properties:
-      id:
-        type: integer
-        format: int64
-      name:
-        type: string
-# Added by API Auto Mocking Plugin
-host: localhost:3000
-basePath: /api
-schemes:
- - http

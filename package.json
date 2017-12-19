@@ -1,13 +1,35 @@
 {
-  "name": "kozhevnikov-nodejs",
-  "version": "0.0.0",
-  "description": "nodejs tutorial project",
+  "name": "hello-world",
+  "version": "0.0.1",
+  "private": true,
+  "description": "New Swagger API Project",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.4",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.3",
+    "typegoose": "^3.7.0",
+    "swagger-express-mw": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.39",
+    "@types/node": "^8.0.28",
+    "@types/swagger-express-mw": "^0.7.3",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "should": "^7.1.0",
+    "supertest": "^1.0.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
   "scripts": {
+    "start": "node app.js",
+    "test": "swagger project test",
     "start-run": "node ./dist",
-    "start": "npm run build && npm run start-run",
-    "start-watch": "npm run nodemon -- --ext ts --exec \"npm run start\"",
-    "test": "node ./dist/test.js",
     "build": "npm run lint && npm run tsc",
     "rebuild": "npm run clean && npm run build",
     "lint": "npm run tslint ./src/**/*.ts",
@@ -19,25 +41,5 @@
     "nodemon": "nodemon",
     "tslint": "tslint",
     "typeorm": "typeorm"
-  },
-  "author": "Victor Kozhevnikov",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/express": "^4.0.39",
-    "@types/node": "^8.0.28",
-    "nodemon": "^1.12.1",
-    "rimraf": "^2.6.2",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.2",
-    "should": "^7.1.0",
-    "supertest": "^1.0.0"
-  },
-  "dependencies": {
-    "express": "^4.16.2",
-    "mongoose": "^4.13.4",
-    "reflect-metadata": "^0.1.10",
-    "rxjs": "^5.4.3",
-    "typegoose": "^3.7.0",
-    "swagger-express-mw": "^0.1.0"
   }
 }
