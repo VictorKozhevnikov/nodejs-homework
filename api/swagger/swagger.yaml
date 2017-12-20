@@ -1,0 +1,189 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Hello World App
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /api
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /cities:
+    x-swagger-router-controller: cities.controller
+    get:
+      tags:
+      - city
+      summary: Gets a list of all cities
+      operationId: getAllCities
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/City'
+    post:
+      tags:
+      - city
+      summary: Add a new city
+      operationId: addCity
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: City object that needs to be added to the database
+        required: true
+        schema:
+          $ref: '#/definitions/City'
+      responses:
+        200:
+          description: successful operation
+  /cities/{cityId}:
+    x-swagger-router-controller: cities.controller
+    get:
+      tags:
+      - city
+      summary: Gets the city with provided id
+      operationId: getCity
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to return
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/City'
+        404:
+          description: City not found
+    put:
+      tags:
+      - city
+      summary: Delete existing city
+      operationId: updateCity
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to update
+        required: true
+        type: integer
+        format: int64
+      - name: city
+        in: body
+        description: City object that needs to be updated
+        required: true
+        schema:
+          $ref: '#/definitions/City'
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/City'
+        404:
+          description: City not found
+    delete:
+      tags:
+      - city
+      summary: Delete an existing city
+      operationId: deleteCity
+      parameters:
+      - name: cityId
+        in: path
+        description: ID of city to delete
+        required: true
+        type: integer
+        format: int64
+      responses:
+        404:
+          description: City not found
+  /hello:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: hello_world
+    get:
+      description: Returns 'Hello' to the caller
+      # used as the method name of the controller
+      operationId: hello
+      parameters:
+        - name: name
+          in: query
+          description: The name of the person to whom to say hello
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  City:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: Saint Petersburg
+      latitude:
+        type: number
+        minimum: -90
+        maximum: 90
+      longitude:
+        type: number
+        minimum: -180.0
+        maximum: 180.0
+      population:
+        type: integer
+        format: int64
+        minimum: 0
+      country:
+        type: string
+        example: Russia
+      province:
+        type: string
+        example: Leningrad
+  HelloWorldResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
